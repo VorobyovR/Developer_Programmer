@@ -181,15 +181,47 @@ text = text[2:9] + text[-5] + text[:2] # ...
 '''
 
 # списки - продолжение
-
+'''
 numbers = [1, 2, 3, 4, 5]
 print(numbers) # [1, 2, 3, 4, 5]
 numbers = list(range(1, 6))
 print(numbers) # [1, 2, 3, 4, 5]
 numbers[0] = 10
 print(numbers) # [10, 2, 3, 4, 5]
+print(f'{len(numbers)} - lenght')
 for i in numbers:
     i *= 2
     print(i, end=" ") # [20, 4, 6, 8, 10]
 print()
 print(numbers) # [10, 2, 3, 4, 5]
+'''
+'''
+colors = ['red', 'green', 'blue']
+for e in colors:
+    print(e) # red green blue
+for e in colors:
+    print(e*2) # redred greengreen blueblue
+colors.append('gray') # добавить в конец
+print(colors == ['red', 'green', 'blue', 'gray']) # True
+colors.remove('red') #del colors[0] # удалить элемент
+'''
+
+# функции
+
+def f(x):
+    if x == 1:
+        return 'Целое'
+    elif x == 2.3:
+        return 23
+    else:
+        return
+
+arg = 1
+arg1 = 2.3
+arg2 = 5
+print(f(arg))
+print(f(arg1))
+print(f(arg2))
+print(type(f(arg)))
+print(type(f(arg1)))
+print(type(f(arg2)))
