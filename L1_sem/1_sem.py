@@ -62,12 +62,14 @@ for i in range(-number_N, number_N+1):
 number_N = int(number_N*10%10)
 print(number_N)'''
 
-number_N = float(input('Веведите число: '))
+'''number_N = float(input('Веведите число: '))
 if number_N % 30 != 0:
     if number_N % 5 == 0 and number_N % 10 == 0 or number_N % 15 == 0:
         print('Yes')
     else:
         print('No')
 else:
-    print('Not right number')
+    print('Not right number')'''
+
+
 

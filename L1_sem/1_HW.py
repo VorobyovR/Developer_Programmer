@@ -14,42 +14,39 @@ else:
 
 # 2. Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат
 
-'''x = bool(0)
-y = bool(0)
-z = bool(0)
-list_first = [x, y, z]
+'''x1 = bool(0)
+y1 = bool(0)
+z1 = bool(0)
+x2 = bool(0)
+y2 = bool(0)
+z2 = bool(0)
 
-x = bool(not 1)
-y = bool(not 1)
-z = bool(not 1)
-list_second = [x, y, z]
+result = not (x1 or y1 or z1) == (not x2 and not y2 and not z2)
+print(f'Origin -> {result}')
 
-result = list_first == list_second
-print(result)
-print()
+list_first = [x1, y1, z1]
+list_second = [x2, y2, z2]
 
 for i in range(len(list_first)):
     list_first[i] = bool(1)
     result = list_first == list_second
-    print(result)
-    print(list_first)
-
+    print(f'{result} -> {list_first} - {list_second}')
+    
 list_first_check = list_first[:]
 list_first_check[1] = bool(0)
 result = list_first_check == list_second
-print(result)
-print(list_first_check)
+print(f'{result} -> {list_first_check} - {list_second}')
 
 for i in range(len(list_first)):
     list_first[i] = bool(0)
     result = list_first == list_second
-    print(result)
-    print(list_first)
+    print(f'{result} -> {list_first} - {list_second}')
+    
 
 list_first[1] = bool(1)
 result = list_first == list_second
-print(result)
-print(list_first)'''
+print(f'{result} -> {list_first} - {list_second}')'''
+
 
 # 3.Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, в которой находится эта точка (или на какой оси она находится).
 # *Пример:*
@@ -96,4 +93,4 @@ y_1 = float(input('Y for first point: '))
 x_2 = float(input('X for second point: '))
 y_2 = float(input('Y for second point: '))
 A_B_distance = round(((x_2 - x_1)**2 + (y_2 - y_1)**2)**0.5, 2)
-print(f'A ({x_1},{y_1}); B ({x_2},{y_2}) -> {A_B_distance}')
+print(f'- A ({x_1},{y_1}); B ({x_2},{y_2}) -> {A_B_distance}')
