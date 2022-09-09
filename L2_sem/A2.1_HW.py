@@ -6,9 +6,11 @@ system('cls')
 # - 6782 -> 23
 # - 0,56 -> 11
 
-num_orig = input()
-num_copy = num_orig.replace('.', '')
+num_orig = input('Input a number: ')
 suma = 0
-for i in num_copy:
+for i in num_orig:
+    num_orig = num_orig.replace('-', '')
+    num_orig = num_orig.replace('.', '')
+for i in num_orig:
     suma += int(i)
 print(f'{num_orig} -> {suma}')
