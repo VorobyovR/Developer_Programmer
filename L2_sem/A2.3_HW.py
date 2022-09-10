@@ -15,8 +15,6 @@ for i in range(num):
     multiplication*=i
     list.append(multiplication)
 for i in list:
-
     result = (1+1/i)**i
     sum = sum + result
-    print(sum)
-
+print(f'For num = {6}: {round(sum)}')
