@@ -26,6 +26,23 @@ Mixed_list = List[:]
 random.shuffle(Mixed_list)
 print(f'Mixed list v.2 -> {Mixed_list}')
 
+# Variant 3
+
+l1 = []
+l2 = []
+n = int(input('Input size for lis: '))
+for i in range(n):
+    l1.append(randint(0,50))
+print(l1)
+for i in range(n):
+    e = randint(0, len(l1)-1)
+    print(e, end=" ")
+    e2 = l1.pop(e)
+    l2.append(e2)
+print()
+print(l2)
+
+
 
 
 
