@@ -11,7 +11,7 @@ d = {}
 
 for i in range(1, num+1):
     result = round((1+1/i)**i, 2)
-    sum = sum + result
+    sum += result
     d[i] = result
 print(f'For num = {num}: {round(sum)}')
 print(d)
