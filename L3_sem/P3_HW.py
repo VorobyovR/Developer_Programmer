@@ -1,14 +1,16 @@
 from os import system
+
 system('cls')
 import random as rand
 from random import randint
 
 import fun as check
 
-
 # 1. Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
 # Пример:
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
+
+# Variant 1
 
 '''def create_list(size: int):
     list = []
@@ -28,6 +30,9 @@ list_res = create_list(n)
 sum_res = sum_elem(list_res)
 print(f'{list_res} -> result: {sum_res}')'''
 
+# Variant 2
+'''list = [randint(-50, 50) for i in range(1, 10) if i % 2 != 0]
+print(sum(list))'''
 
 # 2. Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 # Пример:
@@ -56,7 +61,7 @@ print(f'{list_res} => {multiplication_res}')'''
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-'''def diff_max_min(size: int):
+def diff_max_min(size: int):
     list = []
     for i in range(size):
         list.append(round(rand.random() * 10 ** rand.randint(0,3), 2))
@@ -70,8 +75,7 @@ print(f'{list_res} => {multiplication_res}')'''
     result = round(max - min, 2)
     return print(f'{list} => {result}')
 
-numbers = diff_max_min(int(input('Input size for list: ')))'''
-
+numbers = diff_max_min(int(input('Input size for list: ')))
 
 # 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 # Пример:
@@ -94,7 +98,7 @@ print(f'{number} -> {binar_calc(number)}')'''
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
-def fibonacci_negafibonacci(n: int):
+'''def fibonacci_negafibonacci(n: int):
     l_one = []
     l_two = []
     for i in range(0,n):
@@ -116,7 +120,4 @@ def fibonacci_negafibonacci(n: int):
 
 print("Input a number:")
 n = check.CheckNumber()
-print(fibonacci_negafibonacci(n))
-
-
-
+print(fibonacci_negafibonacci(n))'''
