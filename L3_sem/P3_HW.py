@@ -64,7 +64,7 @@ print(f'{list_res} => {multiplication_res}')'''
 def diff_max_min(size: int):
     list = []
     for i in range(size):
-        list.append(round(rand.random() * 10 ** rand.randint(0,3), 2))
+        list.append(round(rand.random() * 10 ** rand.randint(0,3), 15))
     min = list[0] % 1
     max = list[0] % 1
     for i in range(1, len(list)):
@@ -72,7 +72,7 @@ def diff_max_min(size: int):
             min = list[i] % 1
         if list[i]%1 > max:
             max = list[i] % 1
-    result = round(max - min, 2)
+    result = round(max - min, 15)
     return print(f'{list} => {result}')
 
 numbers = diff_max_min(int(input('Input size for list: ')))
