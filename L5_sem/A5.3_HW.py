@@ -28,4 +28,4 @@ def game(board):
             print(f'We have a winner: {winner_sign}')
         current_step = 'X' if current_step == '0' else '0'
 
-print(game(board))
+game(board)
