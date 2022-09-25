@@ -72,9 +72,33 @@ else:
 # Cложите получившиеся числа и верните из функции в качестве ответа вместе с преобразованным списком
 # https://dzen.ru/media/simplichka/kak-tekst-hranitsia-v-kompiutere-chast-3-62d3d91515d67a522f78e1e6?&
 
+'''first_list = [1,2,3,4,5,6]
+second_list = ['JavaScript', 'Python', 'Java', 'C/С++', 'PHP', 'C#']
+
+def tuple_list(list_1, list_2):
+
+    list_2 = [char.upper() for char in list_2]
+    res_dict = dict(zip(list_1, list_2))
+    return res_dict
+
+def filter_dict(tuple_l):
+    tuple_res = {}
+    for key, value in tuple_l.items():
+        sum_t = 0
+        for i in value:
+            sum_t += ord(i)
+        chek_calc = sum_t / key == int(sum_t/key)
+        if chek_calc:
+            tuple_res[sum_t] = value
+    return tuple_res
+
+res_dict = tuple_list(first_list, second_list)
+print(res_dict)
+print(filter_dict(res_dict))'''
+
 # 4. Создайте программу для игры в ""Крестики-нолики"".
 
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+'''board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 def print_state(state):
     for i, c in enumerate(state):
@@ -104,4 +128,69 @@ def game(board):
             print(f'We have a winner: {winner_sign}')
         current_step = 'X' if current_step == '0' else '0'
 
-game(board)
+game(board)'''
+
+# 5. Создать программу, считывающую два полинома из двух файлов и записывающая в третий файл их сумму.
+
+def get_ones(line):
+    list_temp = []
+    last = 0
+    positive = True
+    for i, item in enumerate(line):
+        if item in {'+', '-'}:
+            if positive:
+                list_temp.append(line[last:i])
+            else:
+                list_temp.append('-' + line[last:i])
+            last = i + 1
+            positive = item == '+'
+    if positive:
+        list_temp.append(line[last:])
+    else:
+        list_temp.append('-' + line[last:])
+    return list_temp
+
+def get_coef(one):
+    for i, item in enumerate(one):
+        if item == 'x':
+            return int(one[:i]), one[i:]
+        if item == 'y':
+            return int(one[:i]), one[i:]
+    return int(one), None
+
+def convert_list(dict):
+    lst = list(dict.values())
+    return lst
+
+def write_file(list):
+    file_result = open('5.5_final.txt', 'w+')
+    file_result.write(f'final -> {result}')
+    file_result.close()
+    return file_result
+
+first_num = open('5.5_1.txt', 'r')
+first_num = first_num.read()
+print(f'original first -> {first_num}')
+
+second_num = open('5.5_2.txt', 'r')
+second_num = second_num.read()
+print(f'original second -> {second_num}')
+
+first_num = get_ones(first_num.replace(' ', '').replace('*', ''))
+second_num = get_ones(second_num.replace(' ', '').replace('*', ''))
+
+first_dic = {item[1]: item[0] for item in map(get_coef, first_num)}
+second_dic = {item[1]: item[0] for item in map(get_coef, second_num)}
+
+list_for_first = convert_list(first_dic)
+list_for_second = convert_list(second_dic)
+
+list_for_first.extend([0] * (len(list_for_second) - len(list_for_first)))
+list_for_second.extend([0] * (len(list_for_first) - len(list_for_second)))
+print(f'first -> {list_for_first}')
+print(f'second -> {list_for_second}')
+
+result = list(map(sum, zip(list_for_first, list_for_second)))
+print(f'final -> {result}')
+
+write_file(result)
